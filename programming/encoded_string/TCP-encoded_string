@@ -9,11 +9,10 @@ client_socket.connect(("challenge01.root-me.org", 52023))
 data = client_socket.recv(1024).decode() #data is printing correctly
 first = re.search(r"'([^']*)'", data).group(1)
 first = base64.b64decode(first)
-print(f"received : \n{data}")
-#data = client_socket.recv(1024).decode()
-#print(f"decoded base64 : {first.decode('utf-8')}")
-#print(f"received : \n{number}") #get number (in list)
+print(f"{data}\n")
+print(f"decoded base64 : {first.decode('utf-8')}")
 
 client_socket.send((first.decode('utf-8') + '\n').encode())
+print("Sending decoded string to server...\n")
 data = client_socket.recv(1024).decode() #data is printing correctly
-print(f"data : {data}")
+print(f"We get the flag : \n{data}", end="")
