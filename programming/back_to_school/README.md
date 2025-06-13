@@ -27,8 +27,10 @@ Using a regular expresion it is very easy
 ```python
 number = re.findall(r'\d+', data)
 ```
-We will get all the digit of whatever size in a list called :```python 
-number```
+We will get all the digit of whatever size in a list called :
+```python 
+number
+```
 
 Then we will send the element needed in the list to a function
 
