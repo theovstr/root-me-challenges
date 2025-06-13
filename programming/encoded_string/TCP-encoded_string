@@ -1,0 +1,19 @@
+import socket
+import re
+import math
+import base64
+
+client_socket = socket.socket()
+client_socket.connect(("challenge01.root-me.org", 52023))
+
+data = client_socket.recv(1024).decode() #data is printing correctly
+first = re.search(r"'([^']*)'", data).group(1)
+first = base64.b64decode(first)
+print(f"received : \n{data}")
+#data = client_socket.recv(1024).decode()
+#print(f"decoded base64 : {first.decode('utf-8')}")
+#print(f"received : \n{number}") #get number (in list)
+
+client_socket.send((first.decode('utf-8') + '\n').encode())
+data = client_socket.recv(1024).decode() #data is printing correctly
+print(f"data : {data}")
