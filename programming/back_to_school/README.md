@@ -48,5 +48,5 @@ after we simply need to send it back to the server and wait for the flag as a re
 client_socket.send((str(value) + "\n").encode())
 ```
 
-# ( don't forget to receive from the server one more time )
-# thx to Amine for helping at the end !
+( don't forget to receive from the server one more time )
+thx to Amine for helping at the end !
